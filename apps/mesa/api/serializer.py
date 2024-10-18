@@ -4,4 +4,4 @@ from apps.mesa.models import Mesa
 class MesaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mesa
-        fields = '_all_'
+        fields = '__all__'

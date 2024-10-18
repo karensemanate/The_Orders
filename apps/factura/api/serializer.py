@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from apps.factura.models import Fcatura
+from apps.factura.models import Factura
 
-class FcaturaSerializer(serializers.ModelSerializer):
+class FacturaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Fcatura
-        fields = '_all_'
+        model = Factura
+        fields = '__all__'

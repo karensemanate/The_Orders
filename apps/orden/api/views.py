@@ -1,8 +1,11 @@
 from rest_framework import viewsets
 from apps.orden.models import Pedido, nPedido
-from .serializers import OrderSerializer
+from .serializers import OrderItemSerializer, OrdenSerializer
 
-class OrderView(viewsets.ModelViewSet):
+class PedidoView(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
-    serializer_class = OrderSerializer
-    
+    serializer_class = OrdenSerializer
+
+class ItemPedidoView(viewsets.ModelViewSet):
+    queryset = nPedido.objects.all()
+    serializer_class = OrderItemSerializer

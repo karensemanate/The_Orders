@@ -4,14 +4,14 @@ from apps.orden.models import Pedido, nPedido
 class OrderItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = nPedido
-        fields = '_all_'
+        fields = '__all__'
 
-class OrdenSerializer(serializers.ModelSerializer):
+class PedidoSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many=True)
 
     class Meta:
         model = Pedido
-        fields = '_all_'
+        fields = '__all__'
 
     def create(self, validated_data):
         items_data = validated_data.pop('items')
