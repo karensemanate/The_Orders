@@ -6,7 +6,7 @@ class OrderItemSerializer(serializers.ModelSerializer):
         model = nPedido
         fields = '_all_'
 
-class OrderSerializer(serializers.ModelSerializer):
+class OrdenSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many=True)
 
     class Meta:
