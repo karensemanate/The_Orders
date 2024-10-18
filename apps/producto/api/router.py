@@ -1,7 +1,7 @@
 from rest_framework.routers import DefaultRouter
-from apps.producto.api.views import ProductView
+from apps.producto.api.views import ProductoView
 
 router = DefaultRouter()
-router.register(r'productos', ProductView, basename='producto')
+router.register(r'productos', ProductoView, basename='producto')
 
 urlpatterns = router.urls

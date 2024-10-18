@@ -16,13 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from apps.restaurante.api.router import router as ResRouter
+from apps.producto.api.router import router as ProRouter
+from apps.mesa.api.router import router as MesRouter
+from apps.orden.api.router import router as OrdRouter
+from apps.factura.api.router import router as FacRouter
+from apps.cocina.api.router import router as CocRouter
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/restaurantes/', include('apps.restaurante.api.urls')),
-    path('api/productos/', include('apps.producto.api.urls')),
-    path('api/mesas/', include('apps.mesa.api.urls')),
-    path('api/pedidos/', include('apps.orden.api.urls')),
-    path('api/facturas/', include('apps.factura.api.urls')),
-    path('api/cocina/', include('apps.cocina.api.urls')),
+    path('api/restaurantes/', include(ResRouter.urls)),
+    path('api/productos/', include(ProRouter.urls)),
+    path('api/mesas/', include(MesRouter.urls)),
+    path('api/pedidos/', include(OrdRouter.urls)),
+    path('api/facturas/', include(FacRouter.urls)),
+    path('api/cocina/', include(CocRouter.urls)),
 ]
